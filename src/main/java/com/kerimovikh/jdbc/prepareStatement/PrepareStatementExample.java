@@ -1,4 +1,4 @@
-package com.kerimovikh.jdbc.basic;
+package com.kerimovikh.jdbc.prepareStatement;
 
 import com.kerimovikh.jdbc.ConnectionUtils;
 
