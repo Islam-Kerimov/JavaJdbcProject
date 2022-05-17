@@ -6,14 +6,17 @@ import java.sql.SQLException;
 
 public class PostgresConnectionUtils {
 
-    public static Connection getPostgresConnection() throws ClassNotFoundException, SQLException {
+    public static Connection getPostgresConnection() {
         String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "kerimovikh95";
 
-        Class.forName("org.postgresql.Driver");
-
-        Connection connection = DriverManager.getConnection(url, user, password);
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         return connection;
     }

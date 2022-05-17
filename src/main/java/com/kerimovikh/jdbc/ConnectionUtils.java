@@ -1,15 +1,14 @@
 package com.kerimovikh.jdbc;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionUtils {
-    private static Connection getMyConnection() throws SQLException, ClassNotFoundException {
+    public static Connection getMyConnection() {
         return PostgresConnectionUtils.getPostgresConnection();
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) {
         System.out.println("Get connection...");
 
         Connection connection = ConnectionUtils.getMyConnection();
